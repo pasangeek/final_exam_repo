@@ -20,15 +20,16 @@
         android:name="com.example.navigationcomponenttest.secondfragment"
         android:label="@string/hello_blank_fragment2"
         tools:layout="@layout/fragment_secondfragment" >
-        <argument
-            android:name="name1"
-            app:argType="float"
-            android:defaultValue="2.0" />
-        <argument
-            android:name="number2"
-            app:argType="float"
-            android:defaultValue="2.0" />
+
+        <action
+            android:id="@+id/action_secondfragment_to_setting"
+            app:destination="@id/setting" />
     </fragment>
+    <fragment
+        android:id="@+id/setting"
+        android:name="com.example.navigationcomponenttest.Setting"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" />
 
 
 </navigation>
