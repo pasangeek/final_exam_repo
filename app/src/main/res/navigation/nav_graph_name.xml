@@ -14,6 +14,9 @@
         <action
             android:id="@+id/action_firstfragment_to_secondfragment"
             app:destination="@id/secondfragment" />
+
+
+
     </fragment>
     <fragment
         android:id="@+id/secondfragment"
@@ -24,6 +27,17 @@
         <action
             android:id="@+id/action_secondfragment_to_setting"
             app:destination="@id/setting" />
+
+        <argument
+            android:name="name"
+            app:argType="float"
+            android:defaultValue="2.0" />
+        <argument
+            android:name="number2"
+            app:argType="float"
+            android:defaultValue="2.0" />
+
+
     </fragment>
     <fragment
         android:id="@+id/setting"

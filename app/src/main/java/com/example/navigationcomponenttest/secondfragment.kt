@@ -14,7 +14,7 @@ import androidx.navigation.fragment.navArgs
 
 class secondfragment : Fragment() {
 
-
+    private val args:secondfragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,7 +28,7 @@ class secondfragment : Fragment() {
         return view
 
 
-        return view
+
     }
     private fun navigatetoThird(){
         val action = secondfragmentDirections.actionSecondfragmentToSetting()
