@@ -25,7 +25,9 @@ class firstfragment : Fragment() {
        // binding = DataBindingUtil.inflate(inflater, R.layout.fragment_firstfragment, container, false)
 
         val  button = view.findViewById<Button>(R.id.button)
-        button.setOnClickListener { navigateToSecond() }
+        button.setOnClickListener {navigateToSecond()
+       // login()
+        }
         return view
 
 
@@ -39,22 +41,24 @@ class firstfragment : Fragment() {
         findNavController().navigate(action)
     }
 
-    private fun submit() {
+    private fun login() {
 
         val name = viewModel.name
         val password = viewModel.password
 
-        when {
+ //if (name=="admin"&& password =="password") navigateToSecond()
+
+       when {
             name.isBlank() -> {
-              //  Toast.makeText(this, "Name is mandatory", Toast.LENGTH_SHORT).show()
+              Toast.makeText(context, "Name is mandatory", Toast.LENGTH_SHORT).show()
             }
 
             password.isBlank() -> {
-               // Toast.makeText(this, "password is mandatory", Toast.LENGTH_SHORT).show()
+               Toast.makeText(context, "password is mandatory", Toast.LENGTH_SHORT).show()
             }
             else -> {
 
-                val user = User(name,password )
+               // val user = User(name,password )
 
 
 
