@@ -3,91 +3,74 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-<data>
-    <variable
-        name="vm"
-        type="com.example.navigationcomponenttest.FragmentViewModel" />
+    <data>
 
-
-</data>
-
-
-
-
-<FrameLayout
+        <variable
+            name="vm"
+            type="com.example.navigationcomponenttest.ViewModel" />
+    </data>
 
 
 
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    xmlns:tools="http://schemas.android.com/tools"
+            <EditText
+                android:id="@+id/etname"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="44dp"
+                android:ems="10"
+                android:hint="@string/name"
+                android:inputType="textEmailAddress"
+                android:minHeight="48dp"
+                android:text="@={vm.name}"
+                app:layout_constraintBottom_toTopOf="@+id/etpassword"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.797" />
+
+            <EditText
+                android:id="@+id/etpassword"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="184dp"
+                android:ems="10"
+                android:hint="@string/password"
+                android:inputType="textEmailAddress"
+                android:minHeight="48dp"
+                android:text="@={vm.password}"
+                app:layout_constraintBottom_toTopOf="@+id/button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="232dp"
+                android:layout_height="126dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="96dp"
+                android:text="Button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                app:layout_constraintBottom_toTopOf="@+id/etname"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-
-
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".firstfragment">
-
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <EditText
-            android:id="@+id/etname"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="44dp"
-            android:ems="10"
-            android:hint="@string/name"
-            android:inputType="textEmailAddress"
-            android:minHeight="48dp"
-            android:text="@={vm.name}"
-            app:layout_constraintBottom_toTopOf="@+id/etpassword"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.797" />
-
-        <EditText
-            android:id="@+id/etpassword"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="184dp"
-            android:ems="10"
-            android:hint="@string/password"
-            android:inputType="textEmailAddress"
-            android:minHeight="48dp"
-            android:text="@={vm.password}"
-            app:layout_constraintBottom_toTopOf="@+id/button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="232dp"
-            android:layout_height="126dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="96dp"
-            android:text="Button"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            app:layout_constraintBottom_toTopOf="@+id/etname"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</FrameLayout>
-    </layout>
+</layout>

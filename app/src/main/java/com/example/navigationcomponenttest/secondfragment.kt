@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 
@@ -14,7 +15,7 @@ import androidx.navigation.fragment.navArgs
 
 class secondfragment : Fragment() {
 
-    private val args:secondfragmentArgs by navArgs()
+   // private val args:secondfragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,10 +32,11 @@ class secondfragment : Fragment() {
 
     }
     private fun navigatetoThird(){
-        val action = secondfragmentDirections.actionSecondfragmentToSetting()
+       // val action = secondfragmentDirections.actionSecondfragmentToSetting()
         //val navController = findNavController()
         //  findNavController().navigate(R.id.action_firstfragment_to_secondfragment)
-        findNavController().navigate(action)
+      //  findNavController().navigate(action)
+        NavHostFragment.findNavController(this).navigate(R.id.action_secondfragment_to_setting)
     }
 
 }

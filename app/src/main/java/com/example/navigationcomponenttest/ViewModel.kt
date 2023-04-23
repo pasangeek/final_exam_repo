@@ -4,7 +4,7 @@ import androidx.databinding.Bindable
 
 import androidx.lifecycle.ViewModel
 
-class FragmentViewModel : ViewModel() {
+class ViewModel : ViewModel(){
     @get:Bindable
     var name: String = ""
 

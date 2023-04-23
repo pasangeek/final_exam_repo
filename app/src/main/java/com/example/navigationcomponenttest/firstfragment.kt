@@ -5,30 +5,42 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.Toast
-import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
+
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.fragment.navArgs
+import com.example.navigationcomponenttest.databinding.FragmentFirstfragmentBinding
+import com.example.navigationcomponenttest.ViewModel
 
 class firstfragment : Fragment() {
 
-
-    val viewModel: FragmentViewModel by activityViewModels()
+    private lateinit var binding: FragmentFirstfragmentBinding
+    private val viewModel: ViewModel by viewModels()
     override fun onCreateView(
+
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_firstfragment,container,false)
-       // binding = DataBindingUtil.inflate(inflater, R.layout.fragment_firstfragment, container, false)
 
-        val  button = view.findViewById<Button>(R.id.button)
-        button.setOnClickListener {navigateToSecond()
-       // login()
-        }
-        return view
+    ): View {
+
+        binding = FragmentFirstfragmentBinding.inflate(inflater,container,false)
+      val root :View = binding.root
+        binding.lifecycleOwner = this
+ binding.vm = viewModel
+
+
+
+       binding.button.setOnClickListener {
+         //  navigateToSecond()
+        login()
+
+          // val name = viewModel.name
+          // val password = viewModel .password
+
+
+       }
+        return root
 
 
 
@@ -37,8 +49,7 @@ class firstfragment : Fragment() {
 
 
     private fun navigateToSecond(){
-        val action = firstfragmentDirections.actionFirstfragmentToSecondfragment()
-        findNavController().navigate(action)
+        NavHostFragment.findNavController(this).navigate(R.id.action_firstfragment_to_secondfragment)
     }
 
     private fun login() {
@@ -56,11 +67,21 @@ class firstfragment : Fragment() {
             password.isBlank() -> {
                Toast.makeText(context, "password is mandatory", Toast.LENGTH_SHORT).show()
             }
+
+
+
             else -> {
 
-               // val user = User(name,password )
+           //  val user = User(name,password )
 
+            if ( name == "user" || password == "password"){
 
+               navigateToSecond()
+            }
+               else {
+
+                Toast.makeText(context, "Invalid Credentials", Toast.LENGTH_SHORT).show()
+               }
 
 
             }
