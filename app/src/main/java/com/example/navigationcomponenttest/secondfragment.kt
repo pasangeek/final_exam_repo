@@ -22,7 +22,9 @@ class secondfragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_secondfragment, container, false)
-
+        val userNameView = view.findViewById<TextView>(R.id.textSum)
+        val SharedPrefUser = sharedPref(view.context).getUsername()
+        userNameView.text = SharedPrefUser
         // Inflate the layout for this fragment
         val  button2 = view.findViewById<Button>(R.id.button3)
         button2.setOnClickListener { navigatetoThird() }
