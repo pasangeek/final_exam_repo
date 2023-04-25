@@ -5,9 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import com.example.navigationcomponenttest.databinding.FragmentFirstfragmentBinding
+import com.example.navigationcomponenttest.databinding.FragmentSettingBinding
 
 class Setting : Fragment() {
-
+    private lateinit var binding: FragmentSettingBinding
+    private val setiingViewModel: SettingViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
