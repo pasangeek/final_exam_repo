@@ -4,25 +4,23 @@ import android.content.Context
 import android.content.SharedPreferences
 
 class sharedPref(context: Context) {
-    private val pref: SharedPreferences =
-        context.getSharedPreferences(context.getString(R.string.app_name), Context.MODE_PRIVATE)
-    private val editor: SharedPreferences.Editor = pref.edit()
+
+
+    private val KEY_USER = "user"
+
+    private val sharedPref = context.getSharedPreferences("MySharedpref",Context.MODE_PRIVATE)
+    private val editor: SharedPreferences.Editor = sharedPref.edit()
 
 
 
-    private fun savePref(key: String, value: String): Int {
-        try {
-            editor.putString(key, value)
-            editor.commit()
-        } catch (e: java.lang.Exception) {
-            return 0;
-        }
-
-        return 1
+    fun getUsername() : String? = sharedPref.getString(KEY_USER, "admin")
+    fun saveUsername(username: String) {
+        editor.putString(KEY_USER, username).commit()
     }
 
-    private fun getPref(key: String): String? {
-        return pref.getString(key, null)
+    fun getPassword():String?=sharedPref.getString(KEY_USER,"password")
+    fun savePassword(password:String){
+        editor.putString(KEY_USER, password).commit()
     }
 
     interface UserPreferenceListener {
