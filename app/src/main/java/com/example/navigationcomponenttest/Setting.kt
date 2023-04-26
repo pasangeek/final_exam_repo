@@ -36,8 +36,9 @@ class Setting : Fragment() {
 binding.button2.setOnClickListener {
 
     sharedPref(root.context).saveUsername((setiingViewModel.name))
+    sharedPref(root.context).savePassword((setiingViewModel.password))
     Toast.makeText(root.context, "User updated successfully.", Toast.LENGTH_SHORT).show()
-    Log.d("LNBTI", "Saved user")
+    Log.d("LNBTI", "user saved")
    // sharedPref.saveUsername(data)
 }
         return root
