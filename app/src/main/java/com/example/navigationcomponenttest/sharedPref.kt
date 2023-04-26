@@ -5,7 +5,7 @@ import android.content.SharedPreferences
 
 class sharedPref(context: Context) {
 
-
+    private  val MySharedpref = "SharedPref"
     private val KEY_USER = "user"
 
     private val sharedPref = context.getSharedPreferences("MySharedpref",Context.MODE_PRIVATE)
@@ -23,10 +23,6 @@ class sharedPref(context: Context) {
         editor.putString(KEY_USER, password).commit()
     }
 
-    interface UserPreferenceListener {
-        fun onSuccess(userCount: Int)
 
-        fun onError()
-    }
 
 }

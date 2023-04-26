@@ -6,7 +6,7 @@
 
         <data>
             <variable
-                name="SettingVM"
+                name="settingVM"
                 type="com.example.navigationcomponenttest.SettingViewModel" />
 
         </data>
@@ -37,7 +37,7 @@
         android:layout_marginTop="120dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Name"
+        android:text="@={settingVM.name}"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -49,6 +49,7 @@
         android:layout_marginTop="120dp"
         android:ems="10"
         android:inputType="textPassword"
+        android:text="@={settingVM.password}"
         app:layout_constraintEnd_toEndOf="@+id/editTextText"
         app:layout_constraintStart_toStartOf="@+id/editTextText"
         app:layout_constraintTop_toTopOf="@+id/editTextText" />
