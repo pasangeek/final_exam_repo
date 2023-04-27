@@ -1,3 +1,4 @@
+
 # Sample Application for User Login And Update user credentials 
 
 
@@ -28,6 +29,10 @@ password = password
 Contributions are always welcome!
 
 
+for Contributing please clone a repository and pull requests are also welcome 
+
+
+
 
 
 
@@ -39,4 +44,35 @@ Contributions are always welcome!
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://link-to-project
+```
+
+
+
+
+    
+## 🔗 Links
+https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository
 
